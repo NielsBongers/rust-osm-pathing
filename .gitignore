@@ -30,7 +30,6 @@ Cargo.lock
 *.hashmap
 
 # Intermediate/result files 
-*.png 
 *.webp 
 *.csv 
 *.txt
