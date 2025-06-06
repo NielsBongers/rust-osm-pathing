@@ -1,0 +1,27 @@
+[package]
+name = "osm-rust"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bincode = "1.3.3"
+chrono = { version = "0.4.38", features = ["serde"] }
+csv = "1.3.0"
+env_logger = "0.11.5"
+geo = { version = "0.28.0", features = ["use-serde"] }
+log = "0.4.22"
+polars = { version = "0.43.0", features = ["lazy", "parquet"], optional = true }
+quick-xml = "0.36.1"
+rand = { version = "0.8.5", features = ["small_rng"] }
+rayon = "1.10.0"
+reqwest = { version = "0.12.7", features = ["blocking", "json"] }
+serde = { version = "1.0.209", features = ["derive"] }
+serde_json = "1.0.128"
+
+[features]
+default = []  # No default features for now
+analysis = ["polars"]
+
+[profile.release]
+opt-level = 3
+debug = true
